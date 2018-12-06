@@ -9,7 +9,11 @@ import javax.persistence.Id;
 @Entity 
 public class Fournisseur implements Serializable{
 	private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
 	@Id @GeneratedValue
+=======
+	@Id
+>>>>>>> fdc3e92537e2ba4b7c4fe2a32f3dfd36aeaf243b
 	@Column(name="id_four")
 	private long id_four;
 	private String libelle; 
@@ -17,7 +21,11 @@ public class Fournisseur implements Serializable{
 	private String email;
 	private String fax;
 	private String adresse;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> fdc3e92537e2ba4b7c4fe2a32f3dfd36aeaf243b
 	public long getId_four() {
 		return id_four;
 	}

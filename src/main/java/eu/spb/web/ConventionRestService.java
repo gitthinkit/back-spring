@@ -2,17 +2,24 @@ package eu.spb.web;
 
 import java.awt.PageAttributes.MediaType;
 import java.net.URI;
+<<<<<<< HEAD
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+=======
+import java.util.List;
+>>>>>>> fdc3e92537e2ba4b7c4fe2a32f3dfd36aeaf243b
 import java.util.Optional;
 
 import javax.validation.Valid;
 
 import eu.spb.dao.ConventionRepository;
 import eu.spb.entities.Convention;
+<<<<<<< HEAD
 import eu.spb.entities.Evenement;
 
+=======
+>>>>>>> fdc3e92537e2ba4b7c4fe2a32f3dfd36aeaf243b
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -65,7 +72,11 @@ public class ConventionRestService {
 		Convention savedconv = conventionRepository.save(conv);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+<<<<<<< HEAD
 				.buildAndExpand(savedconv.getIdConv()).toUri();
+=======
+				.buildAndExpand(savedconv.getId_conv()).toUri();
+>>>>>>> fdc3e92537e2ba4b7c4fe2a32f3dfd36aeaf243b
 
 		return ResponseEntity.created(location).build();
 
@@ -73,10 +84,28 @@ public class ConventionRestService {
 	
 
 
+<<<<<<< HEAD
 	// Update
 	@PutMapping(value="/admin/c/update")
 	public Map update(@RequestBody Convention e) {
 		return Collections.singletonMap("verif",(conventionRepository.save(e)==null)? false : true );
+=======
+	@PutMapping("/updateConvention/{id}")
+	public ResponseEntity<Object> updateConvention(@RequestBody Convention conv, @PathVariable long id) {
+
+		
+		if( conventionRepository.findById(id) == null)
+		{
+			return ResponseEntity.notFound().build();
+
+		}
+		conv.setId_conv(id);
+		
+		conventionRepository.save(conv);
+
+		return ResponseEntity.noContent().build();
+
+>>>>>>> fdc3e92537e2ba4b7c4fe2a32f3dfd36aeaf243b
 	}
 	
 

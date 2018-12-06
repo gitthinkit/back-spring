@@ -4,8 +4,15 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+<<<<<<< HEAD
 
 import javax.persistence.Id;
+=======
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+>>>>>>> fdc3e92537e2ba4b7c4fe2a32f3dfd36aeaf243b
 
 @Entity
 public class Categorie implements Serializable {
